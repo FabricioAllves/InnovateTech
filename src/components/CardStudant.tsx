@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { UserPhoto } from "@components/UserPhoto";
-import { formatData } from "src/utils/formatDate";
+import { formatDate } from "src/utils/formatDate";
 import { User } from "src/types/user";
 import { theme } from "../../theme";
 
@@ -10,7 +10,7 @@ type PropsParamsStudant = TouchableOpacityProps & {
 
 export function CardUser({ data, ...rest }: PropsParamsStudant) {
   const nameStudant = data.name?.first + " " + data.name?.last;
-  const formatDatebirth = formatData(data.dob?.date);
+  const formatDatebirth = formatDate(data?.dob?.date);
 
   return (
     <TouchableOpacity style={styles.container} {...rest}>

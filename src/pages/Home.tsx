@@ -8,6 +8,7 @@ import { SEED, MAX_RESULTS } from "consts";
 import { getLocalStorageListOnePage, setLocalStorageListOnePage } from "src/utils/Storage";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ModalDetails from "@components/ModalDetails";
+import { useStudantStore } from "src/store/studant.store";
 
 export function Home() {
   const [filteredStudants, setFilteredStudants] = useState<User[]>([]);
@@ -16,11 +17,18 @@ export function Home() {
   const [value, setValue] = useState('');
   const [modalVisible, setModalVisible] = useState(false)
 
+  const {setStudant} = useStudantStore()
+
   const filteredData = filteredStudants.filter(item =>
     item.name.title.toLowerCase().includes(value.toLowerCase()) ||
     item.name.first.toLowerCase().includes(value.toLowerCase()) ||
     item.name.last.toLowerCase().includes(value.toLowerCase())
   );
+
+  const MoreDetailsStudant = (studantUser: User) => {
+    setStudant(studantUser)
+    setModalVisible(true)
+  }
 
   const fetchStudents = async () => {
     try {
@@ -29,15 +37,15 @@ export function Home() {
 
       if (page === 1) {
         const localData = await getLocalStorageListOnePage();
-        if (localData) { // save LocalStoage
+        if (localData) { // it is saved in localStorage.
           data = { results: localData };
 
-        } else { // Primeira renderizacao, fazer requisicao pagina 1
+        } else { // First render, make request for page 1.
           const response = await Api.get<ApiResponse>(url);
           data = response.data;
           await setLocalStorageListOnePage(data.results);
         }
-      } else { // Pagina > 1 fazer requisicao proxima pagina
+      } else { // Page > 1, make request for the next page.
         const response = await Api.get<ApiResponse>(url);
         data = response.data;
       }
@@ -56,7 +64,7 @@ export function Home() {
     }
   };
 
-  async function handleFetchMore(distance: number) {
+  const handleFetchMore = async(distance: number) => {
     if (distance < 1) return;
     setLoading(true);
     setPage((oldValue) => oldValue + 1);
@@ -95,7 +103,7 @@ export function Home() {
         <FlatList
           data={filteredData}
           keyExtractor={(item) => item.login?.uuid}
-          renderItem={({ item }) => <CardUser data={item} onPress={() => setModalVisible(true)} />}
+          renderItem={({ item }) => <CardUser data={item} onPress={() => MoreDetailsStudant(item)} />}
           showsVerticalScrollIndicator={false}
           onEndReachedThreshold={0.3}
           onEndReached={({ distanceFromEnd }) => handleFetchMore(distanceFromEnd)}
@@ -108,7 +116,7 @@ export function Home() {
           ListFooterComponent={
             loading
               ? <ActivityIndicator size={60} color={theme.colors.BLUE_100} />
-              : <></>
+              : <Text style={styles.listEmpyText}>There are no students to display.</Text>
           }
         />
 
@@ -167,5 +175,9 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 23,
     color: theme.colors.WHITE
+  },
+  listEmpyText: {
+    fontFamily: theme.fonts.regular,
+    fontSize: 20
   }
 });

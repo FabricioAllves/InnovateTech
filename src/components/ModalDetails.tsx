@@ -10,12 +10,18 @@ import {
 import { UserPhoto } from './UserPhoto';
 import { theme } from "../../theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useStudantStore } from 'src/store/studant.store';
+import { formatDate } from 'src/utils/formatDate';
 
 type Props = {
   setVisible: () => void;
 }
 
 export default function ModalDetails({ setVisible }: Props) {
+  const {studant} = useStudantStore()
+  const name = studant?.name?.first + " " + studant?.name?.last;
+  const formatDatebirth = formatDate(studant?.dob?.date ?? '');
+  
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback onPress={setVisible}>
@@ -24,7 +30,7 @@ export default function ModalDetails({ setVisible }: Props) {
 
       <View style={styles.modalContent}>
         <View style={styles.contentContainer}>
-          <UserPhoto size={150} url={'https://github.com/FabricioAllves.png'} />
+          <UserPhoto size={150} url={studant?.picture.large ?? ''} />
         </View>
 
         <TouchableOpacity
@@ -39,35 +45,35 @@ export default function ModalDetails({ setVisible }: Props) {
         </TouchableOpacity>
 
         <ScrollView style={{marginTop: 60, flex: 1}}>
-          <Text style={styles.name}>Fabricio Henrique</Text>
+          <Text style={styles.name}>{name}</Text>
 
           <View style={styles.about}>
             <Text style={styles.textBold}>E-mail</Text>
-            <Text style={styles.textRegular}>fabricio@example.com</Text>
+            <Text style={styles.textRegular}>{studant?.email.slice(0, 26)}...</Text>
           </View>
           <View style={styles.about}>
             <Text style={styles.textBold}>Gender</Text>
-            <Text style={styles.textRegular}>Masculino</Text>
+            <Text style={styles.textRegular}>{studant?.gender}</Text>
           </View>
           <View style={styles.about}>
             <Text style={styles.textBold}>Date of birth</Text>
-            <Text style={styles.textRegular}>01/01/2000</Text>
+            <Text style={styles.textRegular}>{formatDatebirth}</Text>
           </View>
           <View style={styles.about}>
-            <Text style={styles.textBold}>Fone</Text>
-            <Text style={styles.textRegular}>+55 11 99999-9999</Text>
+            <Text style={styles.textBold}>Phone</Text>
+            <Text style={styles.textRegular}>{studant?.phone}</Text>
           </View>
           <View style={styles.about}>
             <Text style={styles.textBold}>Nationality</Text>
-            <Text style={styles.textRegular}>Brasileiro</Text>
+            <Text style={styles.textRegular}>{studant?.nat}</Text>
           </View>
           <View style={styles.about}>
             <Text style={styles.textBold}>Address</Text>
-            <Text style={styles.textRegular}>Rua Exemplo, 123</Text>
+          <Text style={styles.textRegular}>{studant?.location.city}</Text>
           </View>
           <View style={styles.about}>
             <Text style={styles.textBold}>ID</Text>
-            <Text style={styles.textRegular}>1234567890</Text>
+            <Text style={styles.textRegular}>{studant?.id.value}</Text>
           </View>
         </ScrollView>
       </View>
