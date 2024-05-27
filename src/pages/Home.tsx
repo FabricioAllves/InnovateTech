@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, Text, StyleSheet, View, SafeAreaView, ActivityIndicator, RefreshControl, TouchableOpacity, TextInput, Modal, StatusBar } from "react-native";
-import { CardUser } from "@components/CardUser";
+import { CardUser } from "@components/CardStudant";
 import { ApiResponse, User } from "src/types/user"
 import { Api } from "src/services/api";
 import { theme } from "../../theme";

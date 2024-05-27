@@ -25,7 +25,6 @@ export default function ModalDetails({ setVisible }: Props) {
       <View style={styles.modalContent}>
         <View style={styles.contentContainer}>
           <UserPhoto size={150} url={'https://github.com/FabricioAllves.png'} />
-
         </View>
 
         <TouchableOpacity
