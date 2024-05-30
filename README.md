@@ -1,10 +1,10 @@
 <h1 align="center">InnovateTech</h1>
 
-<img alt="home" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/home.png"/>
+<img width="360" alt="home" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/home.png"/>
 
-<img alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/modalDetails.png"/>
+<img width="360" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/modalDetails.png"/>
 
-<img width="180" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/filterGender.png"/>
+<img width="360" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/filterGender.png"/>
 
 
 Esse projeto é uma aplicação mobile que consome a API Randomuser para listar os users(Alunos). O usuário pode visualizar detalhes do aluno, como endereço, data de registro, idade entre outros.
