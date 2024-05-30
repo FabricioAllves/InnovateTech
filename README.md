@@ -1,6 +1,10 @@
 <h1 align="center">InnovateTech</h1>
 
-<img alt="gif-cell" src="https://github.com/FabricioAllves/InnovateTech/blob/main/src/assets/home.png"/>
+<img alt="home" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/home.png"/>
+
+<img alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/modalDetails.png"/>
+
+<img width="180" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/filterGender.png"/>
 
 
 Esse projeto é uma aplicação mobile que consome a API Randomuser para listar os users(Alunos). O usuário pode visualizar detalhes do aluno, como endereço, data de registro, idade entre outros.
@@ -19,9 +23,9 @@ Nessa projeto foi utilizada a api da [Random User](https://randomuser.me/documen
 https://randomuser.me/api/?seed=${SEED}&results=${MAX_RESULTS}&page=${page}
 ```
 
-- **seed**: Usado para garantir que os dados nao sejam gerados randomicos a cada requisicao, assim trazendo sendo para o endpoint paginado.
+- **seed**: Usado para garantir que os dados nao sejam gerados randomicos a cada requisição, assim trazendo sentido para o endpoint paginado.
 
-- **results**: definiçao de quantidade de users por requisiçao da pagina.
+- **results**: quantidade de users por requisiçao da pagina.
 
 - **page**: pagina a ser requisitada.
 
