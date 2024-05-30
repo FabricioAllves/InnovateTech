@@ -10,8 +10,8 @@ import {
 import { UserPhoto } from './UserPhoto';
 import { theme } from "../../theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useStudantStore } from 'src/store/studant.store';
-import { formatDate } from 'src/utils/formatDate';
+import { formatDate } from '@utils/formatDate';
+import { useStudantStore } from '@store/studant.store';
 
 type Props = {
   setVisible: () => void;
@@ -21,8 +21,6 @@ export default function ModalDetails({ setVisible }: Props) {
   const {studant} = useStudantStore()
   const name = studant?.name?.first + " " + studant?.name?.last;
   const formatDatebirth = formatDate(studant?.dob?.date ?? '');
-
-
   
   return (
     <View style={styles.container}>

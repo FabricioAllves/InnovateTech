@@ -1,5 +1,5 @@
+import { Api } from "@services/api";
 import { MAX_RESULTS, SEED } from "consts";
-import { Api } from "src/services/api";
 import { ApiResponse } from "src/types/user";
 
 const repositorySearch = {

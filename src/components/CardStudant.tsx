@@ -1,8 +1,9 @@
 import { StyleSheet, View, Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { UserPhoto } from "@components/UserPhoto";
-import { formatDate } from "src/utils/formatDate";
 import { User } from "src/types/user";
 import { theme } from "../../theme";
+import { formatDate } from "@utils/formatDate";
+
 
 type PropsParamsStudant = TouchableOpacityProps & {
   data: User;

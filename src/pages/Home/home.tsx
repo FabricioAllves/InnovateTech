@@ -7,6 +7,7 @@ import ModalDetails from "@components/ModalDetails";
 import ModalFilter from "@components/ModalFilter";
 import useSearchStudant from "./home.model";
 
+
 export function Home() {
 
   const {
@@ -24,7 +25,10 @@ export function Home() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar />
+      <StatusBar
+       barStyle='dark-content'
+       backgroundColor='transparent'
+      />
       <View style={styles.body}>
         <Text style={styles.title}>InnovateTech</Text>
 

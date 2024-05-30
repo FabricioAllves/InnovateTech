@@ -8,14 +8,13 @@ import {
 } from 'react-native';
 import { theme } from "../../theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useStudantStore } from 'src/store/studant.store';
+import { useStudantStore } from '@store/studant.store';
 
 type Props = {
   setVisible: () => void;
 }
 
 export default function ModalFilter({ setVisible }: Props) {
-
   const { setGender } = useStudantStore()
 
   const handleChangeGender = (gender: string) => {
@@ -37,7 +36,7 @@ export default function ModalFilter({ setVisible }: Props) {
           <TouchableOpacity
             onPress={() => handleChangeGender('female')}
             activeOpacity={0.6}
-            style={[styles.optionSelect, { backgroundColor: '#ec4899' }]}>
+            style={[styles.optionSelect, { backgroundColor: theme.colors.PINK_100 }]}>
             <MaterialCommunityIcons
               name='gender-female'
               size={40}
