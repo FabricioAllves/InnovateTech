@@ -64,8 +64,6 @@ Para instalar as dependências do projeto, execute o comando:
 yarn install
 ```
 
-
-## Instalação
 Para rodar o projeto, execute o comando:
 
 ```bash
