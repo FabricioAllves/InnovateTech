@@ -47,7 +47,7 @@ https://randomuser.me/api/?seed=${SEED}&results=${MAX_RESULTS}&page=${page}
 Para rodar o projeto é necessário criar um arquivo .env na raiz do projeto com a seguinte chave:
 
 ```bash
-BASE_URL=https://randomuser.me/api
+EXPO_PUBLIC_API_URL=https://randomuser.me/api
 ```
 
 ## Instalação

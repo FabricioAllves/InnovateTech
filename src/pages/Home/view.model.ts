@@ -2,9 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import repositorySearch from "src/models/repositories/search.repository";
 import { useStudantStore } from "src/store/studant.store";
 import { User } from "src/types/user";
-import { getLocalStorageListOnePage, setLocalStorageListOnePage } from "src/utils/Storage";
-
-
+import { getLocalStorageListOnePage, removeLocalStorageListOnePage, setLocalStorageListOnePage } from "src/utils/Storage";
 
 const useSearchStudant = () => {
   const [filteredStudants, setFilteredStudants] = useState<User[]>([]);
@@ -43,7 +41,6 @@ const useSearchStudant = () => {
         } else {
           const response = await repositorySearch.fetchStudents(page);
           data = response?.data;
-          console.log("---")
           if (data?.results) {
             await setLocalStorageListOnePage(data.results);
           }
@@ -51,7 +48,6 @@ const useSearchStudant = () => {
       } else {
         const response = await repositorySearch.fetchStudents(page);
         data = response?.data;
-        console.log("---")
       }
 
       if (!data) return;
@@ -78,8 +74,13 @@ const useSearchStudant = () => {
     setPage((oldValue) => oldValue + 1);
   }
 
+  // async function removeData(){
+  //   await removeLocalStorageListOnePage()
+  // }
+
   useEffect(() => {
     fetchStudents();
+    //removeData()
   }, [page]);
 
   return {

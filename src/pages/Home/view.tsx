@@ -50,11 +50,16 @@ export function Home() {
 
         <FlatList
           data={filteredData}
-          keyExtractor={(item) => item.login?.uuid}
+          keyExtractor={(item) => item.login?.uuid+item.registered.date}
           renderItem={({ item }) => <CardUser data={item} onPress={() => MoreDetailsStudant(item)} />}
           showsVerticalScrollIndicator={false}
-          onEndReachedThreshold={0.3}
+          onEndReachedThreshold={0.4}
           onEndReached={({ distanceFromEnd }) => handleFetchMore(distanceFromEnd)}
+          ListFooterComponent={
+            loadingMore
+              ? <ActivityIndicator color={theme.colors.BLUE_100} />
+              : <></>
+          }
         />
 
         <Modal visible={modalVisible} animationType='fade' transparent={true}>
