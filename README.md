@@ -52,6 +52,12 @@ EXPO_PUBLIC_API_URL=https://randomuser.me/api
 
 ## Instalação
 
+Clone o repositório para sua maquina, execute o comando:
+
+```bash
+git clone https://github.com/FabricioAllves/InnovateTech.git
+```
+
 Para instalar as dependências do projeto, execute o comando:
 
 ```bash
