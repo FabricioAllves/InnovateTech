@@ -7,6 +7,7 @@
 
 <img width="32%" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/filterGender.png"/>
 </div>
+<br><br><br>
 
 
 Esse projeto é uma aplicação mobile que consome a API Randomuser para listar os users(Alunos). O usuário pode visualizar detalhes do aluno, como endereço, data de registro, idade entre outros.
