@@ -4,7 +4,8 @@ import { StatusBar } from 'react-native';
 import { ThemeProvider } from "styled-components/native";
 import {theme} from "./theme";
 import { useFonts, Karla_400Regular, Karla_700Bold } from '@expo-google-fonts/karla';
-import { Home } from '@pages/Home';
+import { Home } from './src/pages/Home/view';
+
 
 
 //import { Routes } from '@routes/index';

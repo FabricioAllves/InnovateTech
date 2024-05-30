@@ -21,6 +21,8 @@ export default function ModalDetails({ setVisible }: Props) {
   const {studant} = useStudantStore()
   const name = studant?.name?.first + " " + studant?.name?.last;
   const formatDatebirth = formatDate(studant?.dob?.date ?? '');
+
+
   
   return (
     <View style={styles.container}>

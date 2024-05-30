@@ -1,50 +1,66 @@
-# Welcome to your Expo app 👋
+<h1 align="center">InnovateTech</h1>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<img alt="gif-cell" src="https://github.com/FabricioAllves/InnovateTech/blob/main/src/assets/home.png"/>
 
-## Get started
 
-1. Install dependencies
+Esse projeto é uma aplicação mobile que consome a API Randomuser para listar os users(Alunos). O usuário pode visualizar detalhes do aluno, como endereço, data de registro, idade entre outros.
 
-   ```bash
-   npm install
-   ```
+Abaixo você encontrará informações importantes sobre o projeto como: tecnologias utilizadas, como rodar o projeto.
 
-2. Start the app
+## Tomadas de  decisões
+Para esse projeto optei por utilizar uma arquitetura MVVM, pois oferece uma maneira clara e organizada de estruturar seu código, separando a logica  e regra de negocio da UI e facilitando a manutenção e a escalabilidade do aplicativo.
 
-   ```bash
-    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+### Api
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Nessa projeto foi utilizada a api da [Random User](https://randomuser.me/documentation) onde utilizei o seguinte endPoint
 
 ```bash
-npm run reset-project
+https://randomuser.me/api/?seed=${SEED}&results=${MAX_RESULTS}&page=${page}
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- **seed**: Usado para garantir que os dados nao sejam gerados randomicos a cada requisicao, assim trazendo sendo para o endpoint paginado.
 
-## Learn more
+- **results**: definiçao de quantidade de users por requisiçao da pagina.
 
-To learn more about developing your project with Expo, look at the following resources:
+- **page**: pagina a ser requisitada.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Tecnologias Utilizadas
 
-## Join the community
+- React Native -> (Expo)
+- TypeScript
+- Axios
+- Zustand
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+## Configuração do Arquivo .env
+
+Para rodar o projeto é necessário criar um arquivo .env na raiz do projeto com a seguinte chave:
+
+```bash
+BASE_URL=https://randomuser.me/api
+```
+
+## Instalação
+
+Para instalar as dependências do projeto, execute o comando:
+
+```bash
+yarn install
+```
+
+
+## Instalação
+Para rodar o projeto, execute o comando:
+
+```bash
+yarn start
+```
+
+
+
+---
+
+Desenvolvido por [Fabricio Henrique](https://www.linkedin.com/in/fabricio-26/)
