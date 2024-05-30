@@ -5,7 +5,7 @@ import { theme } from "../../../theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ModalDetails from "@components/ModalDetails";
 import ModalFilter from "@components/ModalFilter";
-import useSearchStudant from "./view.model";
+import useSearchStudant from "./home.model";
 
 export function Home() {
 
@@ -57,7 +57,7 @@ export function Home() {
           onEndReached={({ distanceFromEnd }) => handleFetchMore(distanceFromEnd)}
           ListFooterComponent={
             loadingMore
-              ? <ActivityIndicator color={theme.colors.BLUE_100} />
+              ? <ActivityIndicator style={{marginVertical: 20}}color={theme.colors.BLUE_100} />
               : <></>
           }
         />

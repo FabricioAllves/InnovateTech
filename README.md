@@ -28,9 +28,9 @@ https://randomuser.me/api/?seed=${SEED}&results=${MAX_RESULTS}&page=${page}
 
 - **seed**: Usado para garantir que os dados nao sejam gerados randomicos a cada requisição, assim trazendo sentido para o endpoint paginado.
 
-- **results**: quantidade de users por requisiçao da pagina.
+- **results**: Quantidade de users por requisiçao da pagina.
 
-- **page**: pagina a ser requisitada.
+- **page**: Pagina a ser requisitada.
 
 ## Tecnologias Utilizadas
 

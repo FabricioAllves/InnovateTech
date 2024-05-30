@@ -4,12 +4,7 @@ import { StatusBar } from 'react-native';
 import { ThemeProvider } from "styled-components/native";
 import {theme} from "./theme";
 import { useFonts, Karla_400Regular, Karla_700Bold } from '@expo-google-fonts/karla';
-import { Home } from './src/pages/Home/view';
-
-
-
-//import { Routes } from '@routes/index';
-
+import { Home } from './src/pages/Home/home';
 
 export default function App() {
 
@@ -23,10 +18,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-
-
           <Home/>
-
     </ThemeProvider>
   );
 }
