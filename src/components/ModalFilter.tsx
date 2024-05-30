@@ -43,7 +43,7 @@ export default function ModalFilter({ setVisible }: Props) {
               style={styles.icon}
             />
             <Text style={styles.titleSelect}>
-              Male
+              Female
             </Text>
           </TouchableOpacity>
 
