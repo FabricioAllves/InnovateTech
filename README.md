@@ -1,11 +1,11 @@
 <h1 align="center">InnovateTech</h1>
 
 <div style="display: flex; justify-content: space-between;">
-<img width="33%" alt="home" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/home.png"/>
+<img width="32%" alt="home" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/home.png"/>
 
-<img width="33%" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/modalDetails.png"/>
+<img width="32%" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/modalDetails.png"/>
 
-<img width="33%" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/filterGender.png"/>
+<img width="32%" alt="modal" src="https://github.com/FabricioAllves/InnovateTech/blob/main/.github/filterGender.png"/>
 </div>
 
 
